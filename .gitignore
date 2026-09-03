@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+lake/
+checkpoints/
+metastore_db/
+spark-warehouse/
+derby.log
+.pytest_cache/
+*.log
+.env

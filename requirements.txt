@@ -1,0 +1,5 @@
+pyspark>=3.5,<4
+kafka-python>=2.0
+psycopg2-binary>=2.9
+pyarrow>=14
+pytest>=8
