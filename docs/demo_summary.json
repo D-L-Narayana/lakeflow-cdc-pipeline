@@ -1,0 +1,41 @@
+{
+  "events": 510663,
+  "generate_seconds": 3.7,
+  "bronze_rows": 510663,
+  "bronze_seconds": 11.2,
+  "silver": {
+    "customers": {
+      "events": 7000,
+      "quarantined": 103,
+      "silver_rows": 6807,
+      "seconds": 2.9
+    },
+    "products": {
+      "events": 300,
+      "quarantined": 0,
+      "silver_rows": 300,
+      "seconds": 1.0
+    },
+    "orders": {
+      "events": 253067,
+      "quarantined": 5136,
+      "silver_rows": 97982,
+      "seconds": 7.9
+    },
+    "order_items": {
+      "events": 250296,
+      "quarantined": 0,
+      "silver_rows": 249796,
+      "seconds": 3.6
+    }
+  },
+  "silver_seconds": 15.5,
+  "gold": {
+    "gold_customer_ltv": 4926,
+    "gold_daily_revenue": 10,
+    "gold_top_products": 300
+  },
+  "gold_seconds": 2.9,
+  "pipeline_seconds": 29.5,
+  "events_per_second": 17294
+}

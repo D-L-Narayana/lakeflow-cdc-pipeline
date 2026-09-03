@@ -50,7 +50,19 @@ make demo          # synthetic Debezium stream -> bronze -> silver -> gold, prin
 
 ## Results (local, 2 vCPU laptop-class sandbox)
 
-<!-- METRICS -->
+`make demo` — synthetic Debezium stream for 100,000 orders (`docs/demo_summary.json`):
+
+| Metric | Value |
+|---|---|
+| CDC events replayed (c / u / d across 4 tables) | **510,663** |
+| Bronze write (parse envelope, partition by table & ingest_date) | 11.2 s |
+| Silver rebuild (flatten, DQ, upsert/delete, SCD2 for 4 tables) | 15.5 s |
+| Gold marts (3 Spark SQL marts) | 2.9 s |
+| End-to-end | **29.5 s ≈ 17,300 events/s** on 2 vCPUs |
+| Rows quarantined | 5,239 — 103 invalid emails (customers), 5,136 negative-amount order events |
+| Silver state | customers 6,807 SCD2 versions over 5,000 keys · orders 97,982 · order_items 249,796 (250 deletes honoured) · products 300 |
+| Tests | `7 passed` (pytest on a local SparkSession) |
+
 
 ## Design decisions
 
